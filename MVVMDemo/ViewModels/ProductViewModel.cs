@@ -88,15 +88,18 @@ namespace MVVMDemo.ViewModels
             UpdateProductListText();
         }
 
-        public void RemoveLastProduct()
+        public Product RemoveLastProduct()
         {
             if (_productList.Count <= 0)
             {
-                return;
+                return null;
             }
 
+            Product lastProduct = _productList.ElementAt(_productList.Count - 1);
             _productList.RemoveAt(_productList.Count - 1);
             UpdateProductListText();
+
+            return lastProduct;
         }
 
         private void ClearInput()

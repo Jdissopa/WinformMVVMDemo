@@ -1,4 +1,5 @@
 ﻿using MVVMDemo.Controllers;
+using MVVMDemo.Databases;
 using MVVMDemo.Models;
 using MVVMDemo.Notifications;
 using MVVMDemo.Validations;
@@ -27,7 +28,7 @@ namespace MVVMDemo.Forms
             _productViewModel = new ProductViewModel();
             productView1.SetViewModel(_productViewModel);
 
-            _productController = new ProductController(_productViewModel);
+            _productController = new ProductController(_productViewModel, new LabDatabaseConnector());
         }
 
         private void simpleButtonAppend_Click(object sender, EventArgs e)

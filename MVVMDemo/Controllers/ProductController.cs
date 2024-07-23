@@ -1,4 +1,6 @@
-﻿using MVVMDemo.Models;
+﻿using MVVMDemo.Databases;
+using MVVMDemo.Interfaces;
+using MVVMDemo.Models;
 using MVVMDemo.Notifications;
 using MVVMDemo.Validations;
 using MVVMDemo.ViewModels;
@@ -7,17 +9,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MVVMDemo.Controllers
 {
     public class ProductController
     {
         private ProductViewModel _productViewModel;
+        private ProductDatabase _database;
 
-        public ProductController(ProductViewModel productViewModel)
+        public ProductController(ProductViewModel productViewModel, IDatabase database)
         {
             _productViewModel = productViewModel;
+            _database = new ProductDatabase(database);
         }
+        
 
         public void Store()
         {
@@ -32,14 +38,17 @@ namespace MVVMDemo.Controllers
             _productViewModel.AppendProductList(validatedProduct);
 
             //store validatedProduct to db
+            int result = _database.Store(validatedProduct);
+
         }
 
         public void DestroyLast()
         {
             //อัพเดทรายการเพื่อการแสดงผล
-            _productViewModel.RemoveLastProduct();
+            Product removed = _productViewModel.RemoveLastProduct();
 
             //delete last product from db
+            bool result = _database.Delete(removed);
         }
     }
 }

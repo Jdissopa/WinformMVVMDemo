@@ -1,0 +1,37 @@
+﻿using MVVMDemo.Interfaces;
+using MVVMDemo.Models;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MVVMDemo.Databases
+{
+    public class LabDatabaseConnector : IDatabase
+    {
+
+        //TODO: อิมพลีเมน้ท์การต่อกับฐานข้อมุล Lab เครื่อง HIS
+
+        public bool DeleteSQL(string sql)
+        {
+            return false;
+        }
+
+        public int InsertSQL(string sql)
+        {
+            return -1;
+        }
+
+        public DataTable SelectSQL(string sql)
+        {
+            return null;
+        }
+
+        public bool UpdateSQL(string sql)
+        {
+            return false;
+        }
+    }
+}
