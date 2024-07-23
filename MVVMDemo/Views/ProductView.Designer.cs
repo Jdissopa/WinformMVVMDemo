@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.textEditName = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEditPrice = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.memoEditProductList = new DevExpress.XtraEditors.MemoEdit();
+            this.textEditPrice = new DevExpress.XtraEditors.TextEdit();
+            this.textEditName = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditPrice.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEditProductList.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +60,33 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // memoEditProductList
+            // 
+            this.memoEditProductList.Location = new System.Drawing.Point(16, 72);
+            this.memoEditProductList.Name = "memoEditProductList";
+            this.memoEditProductList.Size = new System.Drawing.Size(355, 41);
+            this.memoEditProductList.StyleController = this.layoutControl1;
+            this.memoEditProductList.TabIndex = 6;
+            // 
+            // textEditPrice
+            // 
+            this.textEditPrice.Location = new System.Drawing.Point(49, 44);
+            this.textEditPrice.Name = "textEditPrice";
+            this.textEditPrice.Size = new System.Drawing.Size(322, 22);
+            this.textEditPrice.StyleController = this.layoutControl1;
+            this.textEditPrice.TabIndex = 5;
+            this.textEditPrice.Enter += new System.EventHandler(this.textEditPrice_Enter);
+            this.textEditPrice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textEditPrice_KeyUp);
+            this.textEditPrice.Leave += new System.EventHandler(this.textEditPrice_Leave);
+            // 
+            // textEditName
+            // 
+            this.textEditName.Location = new System.Drawing.Point(49, 16);
+            this.textEditName.Name = "textEditName";
+            this.textEditName.Size = new System.Drawing.Size(322, 22);
+            this.textEditName.StyleController = this.layoutControl1;
+            this.textEditName.TabIndex = 4;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -74,14 +101,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(387, 129);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // textEditName
-            // 
-            this.textEditName.Location = new System.Drawing.Point(50, 16);
-            this.textEditName.Name = "textEditName";
-            this.textEditName.Size = new System.Drawing.Size(321, 22);
-            this.textEditName.StyleController = this.layoutControl1;
-            this.textEditName.TabIndex = 4;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.textEditName;
@@ -91,14 +110,6 @@
             this.layoutControlItem1.Text = "ชื่อ";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(29, 17);
             // 
-            // textEditPrice
-            // 
-            this.textEditPrice.Location = new System.Drawing.Point(50, 44);
-            this.textEditPrice.Name = "textEditPrice";
-            this.textEditPrice.Size = new System.Drawing.Size(321, 22);
-            this.textEditPrice.StyleController = this.layoutControl1;
-            this.textEditPrice.TabIndex = 5;
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textEditPrice;
@@ -107,14 +118,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(361, 28);
             this.layoutControlItem2.Text = "ราคา";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(29, 17);
-            // 
-            // memoEditProductList
-            // 
-            this.memoEditProductList.Location = new System.Drawing.Point(16, 72);
-            this.memoEditProductList.Name = "memoEditProductList";
-            this.memoEditProductList.Size = new System.Drawing.Size(355, 41);
-            this.memoEditProductList.StyleController = this.layoutControl1;
-            this.memoEditProductList.TabIndex = 6;
             // 
             // layoutControlItem3
             // 
@@ -134,12 +137,12 @@
             this.Size = new System.Drawing.Size(387, 129);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditPrice.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEditProductList.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 

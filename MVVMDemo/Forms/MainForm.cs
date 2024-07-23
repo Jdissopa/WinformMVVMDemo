@@ -1,4 +1,5 @@
-﻿using MVVMDemo.Models;
+﻿using MVVMDemo.Controllers;
+using MVVMDemo.Models;
 using MVVMDemo.Notifications;
 using MVVMDemo.Validations;
 using MVVMDemo.ViewModels;
@@ -17,29 +18,26 @@ namespace MVVMDemo.Forms
     public partial class MainForm : Form
     {
         private ProductViewModel _productViewModel;
+        private ProductController _productController;
 
         public MainForm()
         {
             InitializeComponent();
 
-            _productViewModel = new ProductViewModel()
-                .SetValidator(new StoreProductRequest())
-                .SetNotification(new ProductNotification());
-
+            _productViewModel = new ProductViewModel();
             productView1.SetViewModel(_productViewModel);
+
+            _productController = new ProductController(_productViewModel);
         }
 
         private void simpleButtonAppend_Click(object sender, EventArgs e)
         {
-            //if (productView1.)
-            //new ProductNotification().InformError("ราคาต้องเป็นตัวเลขเท่านั้น");
-            //return;
-            _productViewModel.SaveProduct();
+            _productController?.Store();
         }
 
         private void simpleButtonPop_Click(object sender, EventArgs e)
         {
-            _productViewModel.RemoveLastProduct();
+            _productController?.DestroyLast();
         }
     }
 }

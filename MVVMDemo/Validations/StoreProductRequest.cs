@@ -27,7 +27,7 @@ namespace MVVMDemo.Validations
             if (_errMsg != string.Empty)
                 return null;
 
-            return new Product { Name = request.Name, Price = request.Price };
+            return request;
         }
     }
 }

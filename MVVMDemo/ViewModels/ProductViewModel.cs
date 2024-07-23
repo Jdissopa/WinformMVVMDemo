@@ -15,10 +15,6 @@ namespace MVVMDemo.ViewModels
         private Product _product;
         private List<Product> _productList;
         private string _productListText;
-
-        private IErrorNotification _errorNotification;
-
-        private IValidation<Product> _validator;
       
 
         public ProductViewModel()
@@ -27,16 +23,9 @@ namespace MVVMDemo.ViewModels
             _productList = new List<Product>();
         }
 
-        public ProductViewModel SetValidator(IValidation<Product> validator)
+        public Product GetProduct()
         {
-            _validator = validator;
-            return this;
-        }
-
-        public ProductViewModel SetNotification(IErrorNotification errNoti)
-        {
-            _errorNotification = errNoti;
-            return this;
+            return _product;
         }
 
         public int Id
@@ -92,17 +81,9 @@ namespace MVVMDemo.ViewModels
             ProductListText = string.Join(Environment.NewLine, _productList.Select(p => $"{p.Name} - {p.Price:C}"));
         }
 
-        public void SaveProduct()
+        public void AppendProductList(Product product)
         {
-            Product p = _validator != null? _validator.Validated(_product) : new Product { Name = _product.Name, Price = _product.Price };
-
-            if (p == null)
-            {
-                _errorNotification?.InformError(_validator.errMsg);
-                return;
-            }
-
-            _productList.Add(p);
+            _productList.Add(product);
             ClearInput();
             UpdateProductListText();
         }
@@ -111,7 +92,6 @@ namespace MVVMDemo.ViewModels
         {
             if (_productList.Count <= 0)
             {
-                _errorNotification?.InformError("ไม่มีรายการแล้ว");
                 return;
             }
 
