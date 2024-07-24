@@ -69,6 +69,16 @@ namespace MVVMDemo.ViewModels
             }
         }
 
+        public List<Product> ProductList
+        {
+            get { return _productList; }
+            set
+            {
+                _productList = value;
+                UpdateProductListText();
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)

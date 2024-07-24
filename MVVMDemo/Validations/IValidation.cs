@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVMDemo.Notifications;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace MVVMDemo.Validations
 {
     public interface IValidation<U>
     {
-        string errMsg { get; }
+        NotificationObj GetNotifications();
         U Validated(U request);
     }
 }

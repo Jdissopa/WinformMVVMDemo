@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVMDemo.Notifications;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace MVVMDemo.Interfaces
 {
     public interface IErrorNotification
     {
-        object InformError(object o);
+        object InformError(NotificationObj notificationObj);
     }
 }

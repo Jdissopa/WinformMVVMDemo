@@ -17,18 +17,18 @@ namespace MVVMDemo.Databases
             _database = database;
         }
 
-        public int Store(Product product)
+        public long Store(Product product)
         {
-            //TODO: อิมพลรเม้นท์ sql และติดต่อฐานข้อมูล
-            string sql = $"some sql";
+            //อิมพลรเม้นท์ sql และติดต่อฐานข้อมูล
+            string sql = $@"INSERT INTO products (name, price) VALUES('{product.Name}',{product.Price.ToString()});";
 
             return _database.InsertSQL(sql);
         }
 
         public bool Delete(Product product)
         {
-            //TODO: อิมพลรเม้นท์ sql และติดต่อฐานข้อมูล
-            string sql = $"some sql";
+            //อิมพลรเม้นท์ sql และติดต่อฐานข้อมูล
+            string sql = $"DELETE FROM products WHERE id = {product.Id.ToString()};";
 
             return _database.DeleteSQL(sql);
         }

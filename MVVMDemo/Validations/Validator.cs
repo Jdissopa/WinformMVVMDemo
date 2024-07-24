@@ -41,7 +41,7 @@ namespace MVVMDemo.Validations
             U validatedData = _validation.Validated(data);
 
             if (validatedData == null)
-                _errorInform?.InformError(_validation.errMsg);
+                _errorInform?.InformError(_validation.GetNotifications());
 
             return validatedData;
         }

@@ -9,7 +9,7 @@ namespace MVVMDemo.Interfaces
 {
     public interface IDatabase
     {
-        int InsertSQL(string sql);
+        long InsertSQL(string sql);
         bool UpdateSQL(string sql);
         bool DeleteSQL(string sql);
         DataTable SelectSQL(string sql);

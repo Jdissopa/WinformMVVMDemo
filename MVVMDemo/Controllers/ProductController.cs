@@ -38,7 +38,7 @@ namespace MVVMDemo.Controllers
             _productViewModel.AppendProductList(validatedProduct);
 
             //store validatedProduct to db
-            int result = _database.Store(validatedProduct);
+            int result = (int)_database.Store(validatedProduct);
 
         }
 

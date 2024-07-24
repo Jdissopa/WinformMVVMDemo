@@ -10,10 +10,12 @@ namespace MVVMDemo.Notifications
 {
     public class ProductNotification : IErrorNotification
     {
-        public object InformError(object o)
+        public object InformError(NotificationObj notificationObj)
         {
-            MessageBox.Show(o.ToString());
-            return o;
+            string errors = string.Join(Environment.NewLine, notificationObj.ErrorMessages);
+            MessageBox.Show(errors);
+
+            return null;
         }
     }
 }

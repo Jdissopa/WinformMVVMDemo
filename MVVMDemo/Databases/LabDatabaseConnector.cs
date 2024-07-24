@@ -12,16 +12,11 @@ namespace MVVMDemo.Databases
     public class LabDatabaseConnector : IDatabase
     {
 
-        //TODO: อิมพลีเมน้ท์การต่อกับฐานข้อมุล Lab เครื่อง HIS
+        //อิมพลีเมน้ท์การต่อกับฐานข้อมุล Lab เครื่อง HIS
 
         public bool DeleteSQL(string sql)
         {
             return false;
-        }
-
-        public int InsertSQL(string sql)
-        {
-            return -1;
         }
 
         public DataTable SelectSQL(string sql)
@@ -32,6 +27,11 @@ namespace MVVMDemo.Databases
         public bool UpdateSQL(string sql)
         {
             return false;
+        }
+
+        public long InsertSQL(string sql)
+        {
+            return -1l;
         }
     }
 }
