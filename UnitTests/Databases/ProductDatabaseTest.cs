@@ -15,6 +15,7 @@ namespace UnitTests.Databases
     {
         private SQLDatabaseConnector _database;
         private ProductDatabase _pdb;
+
         [TestInitialize]
         public void Setup()
         {
