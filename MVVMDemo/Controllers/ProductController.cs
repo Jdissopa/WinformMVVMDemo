@@ -39,7 +39,7 @@ namespace MVVMDemo.Controllers
 
             //store validatedProduct to db
             int result = (int)_database.Store(validatedProduct);
-
+            validatedProduct.Id = result;
         }
 
         public void DestroyLast()
